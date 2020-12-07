@@ -1,9 +1,9 @@
 #! /bin/bash
-printf "Installing RDP Be Patience... " >&2
+printf "Instalando o RDP Tenha Patiencia... " >&2
 {
-sudo useradd -m ALOK
-sudo adduser ALOK sudo
-echo 'ALOK:3301' | sudo chpasswd
+sudo useradd -m MOON
+sudo adduser MOON sudo
+echo 'MOON:3301' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 sudo apt-get update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
@@ -16,43 +16,22 @@ sudo apt install --assume-yes xscreensaver
 sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-sudo sh -c 'echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com `lsb_release -sc` main" >> /etc/apt/sources.list.d/brave.list'
-sudo apt update
-sudo apt install brave-browser brave-keyring
-wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
-sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
-sudo apt install opera-stable
 sudo apt install firefox
-sudo apt update
-sudo apt install iptables
-sudo iptables -A INPUT -p tcp --dport 22003 -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 22005 -j ACCEPT
-sudo iptables -A INPUT -p tcp --dport 22126 -j ACCEPT
-sudo /etc/init.d/iptables-persistent save
-sudo /etc/init.d/iptables-persistent reload
-sudo netfilter-persistent save
-sudo netfilter-persistent reload
-rm -f multitheftauto_linux_x64.tar.gz
-wget http://linux.mtasa.com/dl/multitheftauto_linux_x64.tar.gz
-tar -xf multitheftauto_linux_x64.tar.gz
-rm -f baseconfig.tar.gz
-wget http://linux.mtasa.com/dl/baseconfig.tar.gz
-tar -xf baseconfig.tar.gz
-mv baseconfig/* multitheftauto_linux_x64/mods/deathmatch
+google-chrome http://www.twicth.tv/daluatv
+firefox http://www.twicth.tv/daluatv
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
-sudo adduser ALOK chrome-remote-desktop
+sudo adduser MOON chrome-remote-desktop
 } &> /dev/null &&
 printf "\nSetup Complete " >&2 ||
 printf "\nError Occured " >&2
-printf '\nCheck https://remotedesktop.google.com/headless  Copy Command Of Debian Linux And Paste Down\n'
+printf '\nCheck https://remotedesktop.google.com/headless  Copiar o comando do Debian Linux e cole aqui\n'
 read -p "Paste Here: " CRP
-su - ALOK -c """$CRP"""
-printf 'Check https://remotedesktop.google.com/access/ \n\n'
+su - MOON -c """$CRP"""
+printf 'Entre no Link > https://remotedesktop.google.com/access/ \n\n'
 if sudo apt-get upgrade &> /dev/null
 then
-    printf "\n\nUpgrade Completed " >&2
+    printf "\n\nUpgrade Concluído " >&2
 else
     printf "\n\nError Occured " >&2
 fi
