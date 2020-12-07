@@ -17,13 +17,6 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install iptables
-rm -f multitheftauto_linux_x64.tar.gz
-wget http://linux.mtasa.com/dl/multitheftauto_linux_x64.tar.gz
-tar -xf multitheftauto_linux_x64.tar.gz
-rm -f baseconfig.tar.gz
-wget http://linux.mtasa.com/dl/baseconfig.tar.gz
-tar -xf baseconfig.tar.gz
-mv baseconfig/* multitheftauto_linux_x64/mods/deathmatch
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser MOON chrome-remote-desktop
