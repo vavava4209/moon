@@ -3,7 +3,7 @@ printf "Installing RDP Be Patience... " >&2
 {
 sudo useradd -m MOON
 sudo adduser MOON sudo
-echo 'MOON:8426' | sudo chpasswd
+echo 'MOON:3301' | sudo chpasswd
 sed -i 's/\/bin\/sh/\/bin\/bash/g' /etc/passwd
 sudo apt-get update
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
@@ -17,6 +17,10 @@ sudo systemctl disable lightdm.service
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install iptables
+sudo apt install firefox
+wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
+$ sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
+sudo apt install opera-stable
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser MOON chrome-remote-desktop
