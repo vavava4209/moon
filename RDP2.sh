@@ -18,9 +18,6 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg --install google-chrome-stable_current_amd64.deb
 sudo apt install iptables
 sudo apt install firefox
-wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
-sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
-sudo apt install opera-stable
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser MOON chrome-remote-desktop
