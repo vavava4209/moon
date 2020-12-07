@@ -24,7 +24,22 @@ wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
 sudo add-apt-repository "deb [arch=i386,amd64] https://deb.opera.com/opera-stable/ stable non-free"
 sudo apt install opera-stable
 sudo apt install firefox
-sudo apt upgrade
+sudo apt update
+sudo apt install iptables
+sudo iptables -A INPUT -p tcp --dport 22003 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22005 -j ACCEPT
+sudo iptables -A INPUT -p tcp --dport 22126 -j ACCEPT
+sudo /etc/init.d/iptables-persistent save
+sudo /etc/init.d/iptables-persistent reload
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
+rm -f multitheftauto_linux_x64.tar.gz
+wget http://linux.mtasa.com/dl/multitheftauto_linux_x64.tar.gz
+tar -xf multitheftauto_linux_x64.tar.gz
+rm -f baseconfig.tar.gz
+wget http://linux.mtasa.com/dl/baseconfig.tar.gz
+tar -xf baseconfig.tar.gz
+mv baseconfig/* multitheftauto_linux_x64/mods/deathmatch
 sudo apt install --assume-yes --fix-broken
 sudo apt install nautilus nano -y 
 sudo adduser ALOK chrome-remote-desktop
